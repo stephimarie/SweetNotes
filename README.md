@@ -41,6 +41,7 @@ THEN I am presented with empty fields to enter a new note title and the note’s
 The following images show the web application's appearance and functionality: 
 
 ![11-express-homework-demo-01](https://user-images.githubusercontent.com/71304781/102440189-a0e65b80-3fd4-11eb-841f-98f92af9209d.png)
+![11-express-homework-demo-02](https://user-images.githubusercontent.com/71304781/102440290-d55a1780-3fd4-11eb-9f3e-fc2c958b6ff3.png)
 
 
 ## Getting Started
