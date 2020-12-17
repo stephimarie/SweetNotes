@@ -7,3 +7,6 @@ const fs = require("fs");
 
 const app = express();
 const PORT = process.env.Port || 5000;
+
+app.use(express.urlencoded({ extended: true }));
+
