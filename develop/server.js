@@ -46,3 +46,33 @@ app.post("/api/notes", function (req, res) {
     res.redirect("/notes");
 
 });
+
+app.delete("/api/notes/:id", function (req, res) {
+    
+    const db = fs.readFileSync(path.join(__dirname, "/db/db.json"));
+    const dbFile = JSON.parse(db);
+    console.log(dbFile);
+    console.log("#############");
+
+    var chose = req.params.id;
+
+    for(let x=0; x < dbFile.length; x++) {
+        console.log(dbFile[x]);
+
+
+        if(dbFile[x].id.toString() === chose) {
+            dbFile.splice(x,1);
+            console.log(dbFile, "++++++++++++++++++++++++++++")
+            break;
+        }
+    }
+
+    fs.writeFileSync(path.join(__dirname, "/db/db.json"), JSON.stringify(dbFile));
+    res.sendStatus(200);
+});
+
+app.get("*", function() {
+    res.sendFile(path.join(__dirname, ".public/index.html"));
+});
+
+app.listen(PORT, () => console.log (`listening at http://localhost:${PORT}`));
