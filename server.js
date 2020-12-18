@@ -1,12 +1,12 @@
 const express = require("express");
 const path = require("path");
-const db = require("./develop/db/db.json");
+const db = require("./db/db.json");
 const uniqid = require("uniqid");
 const fs = require("fs");
 
 
 const app = express();
-const PORT = process.env.Port || 5000;
+const PORT = process.env.PORT || 5000;
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -48,18 +48,18 @@ app.post("/api/notes", function (req, res) {
 });
 
 app.delete("/api/notes/:id", function (req, res) {
-    
+
     const db = fs.readFileSync(path.join(__dirname, "/db/db.json"));
     const dbFile = JSON.parse(db);
     console.log(dbFile);
-    console.log("#############");
+    console.log("##############");
 
     var chose = req.params.id;
 
     for(let x=0; x < dbFile.length; x++) {
         console.log(dbFile[x]);
-
-
+        
+        
         if(dbFile[x].id.toString() === chose) {
             dbFile.splice(x,1);
             console.log(dbFile, "++++++++++++++++++++++++++++")
@@ -72,7 +72,7 @@ app.delete("/api/notes/:id", function (req, res) {
 });
 
 app.get("*", function() {
-    res.sendFile(path.join(__dirname, ".public/index.html"));
+    res.sendFile(path.join(__dirname, "./public/index.html"));
 });
 
-app.listen(PORT, () => console.log (`listening at http://localhost:${PORT}`));
+app.listen(PORT, () => console.log(`listening at http://localhost:${PORT}`));
