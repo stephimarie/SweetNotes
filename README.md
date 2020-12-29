@@ -48,6 +48,6 @@ The following images show the web application's appearance and functionality:
 * APIs
 
 ## Links
-[Heroku Page](https://stephimarie.github.io/Yoda_me_astrology/.)
+[Heroku Page](https://sweetnote.herokuapp.com/.)
 
 
