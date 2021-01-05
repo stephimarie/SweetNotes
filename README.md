@@ -47,7 +47,7 @@ The following images show the web application's appearance and functionality:
 * Express
 * APIs
 
-## Links
-[Heroku Page](https://sweetnote.herokuapp.com/.)
+## Heroku Links
+[SweetNotes](https://sweetnote.herokuapp.com/.)
 
 
